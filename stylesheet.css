@@ -1,0 +1,69 @@
+:root{
+    /* --deft:100px; */
+    --deft: 200px;
+}
+
+.wrapper{
+    margin-top: 250px;
+    perspective:1000px;
+}
+
+.cubo{
+    /* width: 200px; */
+    width: 400px;
+    aspect-ratio: 1;
+    margin: auto;
+    transform-style:preserve-3d;
+    animation: rotate 20s linear infinite;
+    /* border-radius: 20px; */
+}
+
+.cubo img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 500ms ease-in-out;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+
+.cubo img:nth-child(1){
+    transform: rotateY(0deg) translateZ(var(--deft));
+}
+
+.cubo img:nth-child(2){
+    transform: rotateY(90deg) translateZ(var(--deft));
+}
+
+.cubo img:nth-child(3){
+    transform: rotateY(180deg) translateZ(var(--deft));
+}
+
+.cubo img:nth-child(4){
+    transform: rotateY(-90deg) translateZ(var(--deft));
+}
+
+.cubo img:nth-child(5){
+    transform: rotateX(90deg) translateZ(var(--deft));
+}
+
+.cubo img:nth-child(6){
+    transform: rotateX(-90deg) translateZ(var(--deft));
+}
+
+.cubo:hover{
+    --deft:300px;
+    border-radius: 20px;
+    /* animation-play-state: paused; */
+}
+
+@keyframes rotate{
+    0%{ 
+        transform: rotateX(0deg) rotateY(0deg); 
+    }
+    100%{ 
+        transform: rotateX(360deg) rotateY(360deg); 
+    }
+}
+
